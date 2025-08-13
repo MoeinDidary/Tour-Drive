@@ -1,0 +1,20 @@
+{% extends 'shared/base.html' %}
+
+{% block title %}Car List{% endblock %}
+
+{% block content %}
+    <main class="car-list-container">
+        <h1>🚗 Available Cars</h1>
+        <div class="car-grid">
+            {% for car in cars %}
+                <div class="car-card">
+                    <img src="{{ car.image.url }}" alt="{{ car.name }}">
+                    <h2>{{ car.name }}</h2>
+                    <p>${{ car.price_per_hour }}</p>
+                    <p>{{ car.route }}</p>
+                    <a href="{% url 'show_detail_car' car.pk %}" class="btn">View Details</a>
+                </div>
+            {% endfor %}
+        </div>
+    </main>
+{% endblock %}

@@ -1,0 +1,47 @@
+{% extends 'shared/base.html' %}
+{% block title %}🛒 Your Cart{% endblock %}
+
+{% block content %}
+    <div class="cart-container">
+        <h1>🛒 Your Cart</h1>
+
+        {% if cart_items %}
+            <table class="cart-table">
+                <thead>
+                <tr>
+                    <th>Car</th>
+                    <th>Price/Hour</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
+                    <th>Action</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for item in cart_items %}
+                    <tr>
+                        <td>
+                            {% if item.car.image %}
+                                <img src="{{ item.car.image.url }}" alt="{{ item.car.name }}" class="cart-img">
+                            {% endif %}
+                            {{ item.car.name }}
+                        </td>
+                        <td>${{ item.car.price_per_hour }}</td>
+                        <td>{{ item.quantity }}</td>
+                        <td>${{ item.total }}</td>
+                        <td>
+                            <a href="{% url 'remove_from_cart' item.car.id %}" class="btn btn-danger">❌ Remove</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+
+            <div class="cart-total">
+                <h3>Total Price: ${{ total_price }}</h3>
+                <a href="#" class="btn btn-success">✅ Checkout</a>
+            </div>
+        {% else %}
+            <p class="empty-cart">Your cart is empty 🛍</p>
+        {% endif %}
+    </div>
+{% endblock %}

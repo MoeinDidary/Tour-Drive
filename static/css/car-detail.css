@@ -1,0 +1,57 @@
+.car-detail {
+    max-width: 700px;
+    margin: 30px auto;
+    background: #2a2a2a;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    display: flex;
+    gap: 20px;
+    overflow: hidden; /* جلوگیری از بیرون زدن محتوا */
+}
+
+.car-detail img {
+    width: 250px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 12px;
+    flex-shrink: 0;
+}
+
+.car-info {
+    flex: 1;
+    color: #ddd;
+    display: flex;
+    flex-direction: column;
+}
+
+.car-info h1 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.8rem;
+    color: #fff;
+}
+
+.car-info p {
+    margin: 6px 0;
+    font-size: 1rem;
+}
+
+.car-info .btn {
+    align-self: flex-start;
+    margin-top: 20px;
+    padding: 10px 16px;
+    background: #ff9800;
+    color: #fff;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s ease;
+    cursor: pointer;
+    max-width: fit-content;
+    box-sizing: border-box;
+}
+
+.car-info .btn:hover {
+    background: #e68900;
+}

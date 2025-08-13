@@ -1,0 +1,26 @@
+{% extends 'shared/base.html' %}
+
+{% block title %}
+    Tour Drive | Register
+{% endblock %}
+
+{% block content %}
+    <main class="home">
+        <div class="home-content">
+            <h1>📝 Register</h1>
+            <p>Enter Your Information To Create A New Account.</p>
+
+            <form method="POST" class="form" novalidate>
+                {% csrf_token %}
+                {{ register_form.as_p }}
+
+                <button type="submit" class="btn">Create Account</button>
+            </form>
+
+            <p style="margin-top: 20px;">
+                Already Have Account?
+                <a href="{% url 'show_login' %}" class="btn">Log In</a>
+            </p>
+        </div>
+    </main>
+{% endblock %}

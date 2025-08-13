@@ -1,0 +1,94 @@
+body {
+    background-color: #121212;
+    color: #ddd;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.home {
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+.home-content {
+    max-width: 960px;
+    width: 100%;
+    background: #1e1e1e;
+    padding: 40px 50px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+    text-align: center;
+}
+
+.home-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #eee;
+}
+
+.home-subtitle {
+    font-size: 1.3rem;
+    margin-bottom: 40px;
+    color: #aaa;
+}
+
+.options-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.option-card {
+    background: #292929;
+    border-radius: 12px;
+    padding: 25px 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.9);
+    text-decoration: none;
+    color: #ddd;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex: 1;
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.option-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 1);
+}
+
+.option-icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.option-card h3 {
+    margin: 0 0 10px 0;
+    font-weight: 700;
+    font-size: 1.4rem;
+    color: #fff;
+}
+
+.option-card p {
+    font-size: 1rem;
+    color: #bbb;
+    line-height: 1.4;
+}
+
+@media (max-width: 800px) {
+    .options-row {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .option-card {
+        max-width: 100%;
+    }
+}
+
